@@ -20,4 +20,4 @@
 :  [Aruino software](https://www.arduino.cc/en/software)
 
 **Written by**
-: ## Karim Gomaa
+## Karim Gomaa
