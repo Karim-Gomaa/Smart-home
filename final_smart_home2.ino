@@ -36,7 +36,6 @@ dht DHT;
 //LDR sensor
 #define LDR A1
 int  ldr ;
-float vout ;
 float temp ;
 float humidity;
 
@@ -102,9 +101,6 @@ void setup() {
 
 
   attachInterrupt(digitalPinToInterrupt(MQ_A), interrupt, RISING); //inerrupt for mq_2
-  // attachInterrupt(digitalPinToInterrupt(Vibration),interrupt,RISING); // interrupt for vibratrion
-
-  //EEPROM.write(0,0);
 
   Time = millis();
 
@@ -337,11 +333,11 @@ lable:
 
           case 'o':  // open door
             motor.write(180);
-            check = 1;
+            check1 = 1;
             break;
           case 'c': // close door
             motor.write(90);
-            check = 0;
+            check1 = 0;
             break;
 
           case 'n': // turn on the light first floor
@@ -389,7 +385,7 @@ lable:
           if ( distance_m < 0.5)
           {
             motor.write(180);
-            check = 1;
+            check1 = 1;
           }
           else if (distance_m > 0.5 || distance_m < 0)
           {
